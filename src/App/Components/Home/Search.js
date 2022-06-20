@@ -11,7 +11,9 @@ function Search() {
   useEffect(() => {
     async function fetchSchools () {
       setLoading(true);
-      const data = await fetch(`http://universities.hipolabs.com/search?name=${debouncedSearch}`)
+      const data = await fetch(`http://universities.hipolabs.com/search?name=${debouncedSearch}`, {
+        mode: 'cors',
+      })
         .then((res) => res.json());
       setSchools(data);
       setLoading(false);
