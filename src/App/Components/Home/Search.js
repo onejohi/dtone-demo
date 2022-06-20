@@ -12,7 +12,7 @@ function Search() {
     async function fetchSchools () {
       setLoading(true);
       const data = await fetch(`http://universities.hipolabs.com/search?name=${debouncedSearch}`, {
-        mode: 'cors',
+        mode: 'no-cors',
       })
         .then((res) => res.json());
       setSchools(data);
