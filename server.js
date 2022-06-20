@@ -1,10 +1,6 @@
-/*
-    For a production app, the token would be verified for validity
-    The following code demonstrates this in a basic way and how the user information can be returned
-    This information should also be stored in a DB for future use
-*/
 const express = require('express');
 const dotenv = require('dotenv');
+const path = require('path')
 const { OAuth2Client } = require('google-auth-library');
 
 dotenv.config();
@@ -32,6 +28,11 @@ app.post('/api/google-login', async (req, res) => {
     updateOrInsert(users, { name, email, picture });
     res.status(200);
     res.json({ name, email, picture });
+});
+
+app.use(express.static(path.join(__dirname, '/build')));
+app.get('*', (_, res) => {
+    res.sendFile(path.join(__dirname, '/build/index.html'));
 });
 
 app.listen(process.env.PORT || 5000, () => {
