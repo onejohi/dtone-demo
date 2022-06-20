@@ -1,7 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
 import Login from './App/Components/Auth/Login';
 import Logout from './App/Components/Auth/Logout';
+import Header from './App/Common/Header';
+import Search from './App/Components/Home/Search';
 import { useEffect, useState } from 'react';
 import { gapi } from 'gapi-script';
 
@@ -34,13 +35,13 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>DT One Demo</h1>
+      <div className='container'>
+        <Header />
         {
           userData ? (
             <div>
               <p>You logged in as {userData.email}</p>
+              <Search />
               <Logout handleLogoutClick={handleLogout} />
             </div>
           ) : (
@@ -48,7 +49,7 @@ function App() {
           )
         }
         
-      </header>
+      </div>
     </div>
   );
 }
