@@ -12,11 +12,6 @@ function Search() {
   useEffect(() => {
     async function fetchSchools () {
       setLoading(true);
-      axios
-        .get(`http://universities.hipolabs.com/search?name=${debouncedSearch}`)
-        .then((res) => {
-          console.log({ res });
-        })
       const data = await fetch(`http://universities.hipolabs.com/search?name=${debouncedSearch}`, {
         mode: 'cors',
         credentials: 'omit',
