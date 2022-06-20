@@ -12,7 +12,7 @@ function Login({ handleLoginClick }) {
 
     if (!userData) {
       MySwal.fire({
-        title: <p>Logged in as {googleData.profileObj.email}</p>,
+        text: `Logged in as ${googleData.profileObj.email}`,
         didOpen: () => {
           MySwal.isLoading()
         },
