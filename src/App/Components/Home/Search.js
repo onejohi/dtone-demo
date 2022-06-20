@@ -12,7 +12,6 @@ function Search() {
     async function fetchSchools () {
       setLoading(true);
       const data = await fetch(`http://universities.hipolabs.com/search?name=${debouncedSearch}`, {
-        referrerPolicy: 'no-referrer-when-downgrade',
         mode: 'cors',
       })
         .then((res) => res.json());
