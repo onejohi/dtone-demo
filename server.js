@@ -1,6 +1,7 @@
 const express = require('express');
 const dotenv = require('dotenv');
-const path = require('path')
+const path = require('path');
+const cors = require('cors');
 const { OAuth2Client } = require('google-auth-library');
 
 dotenv.config();
@@ -31,6 +32,7 @@ app.post('/api/google-login', async (req, res) => {
 });
 
 app.use(express.static(path.join(__dirname, '/build')));
+app.use(cors());
 app.get('*', (_, res) => {
     res.sendFile(path.join(__dirname, '/build/index.html'));
 });
