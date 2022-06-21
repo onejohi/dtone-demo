@@ -46,19 +46,19 @@ function App() {
             </div>
           ) : (
             <div>
-              <div class="p-5 mb-4 bg-light rounded-3">
-                <div class="container-fluid py-5">
-                  <h1 class="display-5 fw-bold">
+              <div className="p-5 mb-4 bg-light rounded-3">
+                <div className="container-fluid py-5">
+                  <h1 className="display-5 fw-bold">
                     Hi there,
                   </h1>
-                  <p class="fs-4">
+                  <p className="fs-4">
                     Welcome to school search, please login with your Google account to continue.
                   </p>
                   <Login handleLoginClick={handleLogIn} />
                 </div>
               </div>
 
-              <footer class="pt-3 mt-4 text-muted border-top">
+              <footer className="pt-3 mt-4 text-muted border-top">
                 &copy; Onejohi 2022
               </footer>
             </div>
