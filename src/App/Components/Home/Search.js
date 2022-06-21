@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import useDebounce from '../../../Hooks/useDebounce';
-import axios from 'axios';
 
 function Search() {
   const [search, setSearch] = useState('');
@@ -14,9 +13,6 @@ function Search() {
       setLoading(true);
       const data = await fetch(`http://universities.hipolabs.com/search?name=${debouncedSearch}`, {
         mode: 'cors',
-        credentials: 'omit',
-        referrerPolicy: 'unsafe-url',
-        referrer: 'https://dtone-demo.herokuapp.com/',
       })
         .then((res) => res.json());
       setSchools(data);
